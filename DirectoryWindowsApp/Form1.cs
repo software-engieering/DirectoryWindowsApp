@@ -169,67 +169,6 @@ namespace DirectoryWindowsApp
             }
         }
 
-        /************************************ 2nd part **************************************/
-
-
-        //functionlity of number calculation
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                //get all the text files in the selected directory
-                filesCalc = Directory.GetFiles(fbd.SelectedPath, "*.calc");
-
-                string path = Path.GetFileName(fbd.SelectedPath);
-
-                //create path for the answ file in the selected directory
-                string filePath = fbd.SelectedPath + "/Output" + ".answ";
-
-                //check whether the file exists or not . If does not exist then create a file
-                if (!File.Exists(filePath))
-                {
-                    var answFile = File.CreateText(filePath);
-                    answFile.Close();
-                    listBox_listAnswers.Items.Add(Path.GetFileName(filePath));
-                }
-
-                //clear the listbox showing the list of calc files in the selected directory
-                listBox_listCalcFiles.Items.Clear();
-
-                //iterate through all the files and read them one by one
-                foreach (var fileCalc in filesCalc)
-                {
-                    // adding the current calc file in the listbox
-                    listBox_listCalcFiles.Items.Add(Path.GetFileName(fileCalc));
-
-                    //reading the content of files line by line and storing the solution in a string array
-                    string[] lines = File.ReadAllLines(fileCalc);
-                    foreach (string line in lines)
-                    {
-                        EvaluateString es = new EvaluateString();
-                        //adding the evaluated expression in the list in the specified format
-                        calcExpressions.Add(line + " = " + Math.Round(es.evaluate(line),2));
-                        listBox_listAnswers.Items.Add(line + " = " + Math.Round(es.evaluate(line),2));
-
-                    }
-
-                    using (StreamWriter sw = new StreamWriter(filePath))
-                    {
-                        foreach (var expression in calcExpressions)
-                        {
-                            sw.WriteLine(expression);
-                        }
-                    }
-
-                }
-
-
-
-            }
-
-        }
+    
     }
 }
