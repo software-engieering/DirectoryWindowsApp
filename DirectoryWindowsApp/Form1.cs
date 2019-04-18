@@ -75,7 +75,7 @@ namespace DirectoryWindowsApp
                         string content = File.ReadAllText(file);
 
                         
-                        var wordPattern = new Regex(@"\w+");
+                        var wordPattern = new Regex(@".[\$]?(\w+)");
                         
 
                         foreach (Match match in wordPattern.Matches(content))
@@ -104,6 +104,20 @@ namespace DirectoryWindowsApp
                 }
 
 
+                listBox_allSortedFiles.Items.Clear();
+                foreach (var directory in directories)
+                {
+                    string[] sortedFilesInAllDirectories = new string[200];
+                    sortedFilesInAllDirectories = Directory.GetFiles(directory, "*.txt");
+                    foreach (var sortedFiles in sortedFilesInAllDirectories)
+                    {
+
+
+                        if (Path.GetFileName(sortedFiles).StartsWith("sorted"))
+                            listBox_allSortedFiles.Items.Add(Path.GetFileName(sortedFiles));
+                    }
+
+                }
 
 
             }

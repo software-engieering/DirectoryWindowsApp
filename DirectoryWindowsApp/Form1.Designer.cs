@@ -43,6 +43,8 @@
             this.textBox_searchWords = new System.Windows.Forms.TextBox();
             this.button_searchWords = new System.Windows.Forms.Button();
             this.listBox_listSearchFiles = new System.Windows.Forms.ListBox();
+            this.listBox_allSortedFiles = new System.Windows.Forms.ListBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button_selectDirectory
@@ -157,7 +159,7 @@
             // 
             // textBox_searchWords
             // 
-            this.textBox_searchWords.Location = new System.Drawing.Point(1150, 58);
+            this.textBox_searchWords.Location = new System.Drawing.Point(1442, 70);
             this.textBox_searchWords.Name = "textBox_searchWords";
             this.textBox_searchWords.Size = new System.Drawing.Size(207, 22);
             this.textBox_searchWords.TabIndex = 12;
@@ -165,7 +167,7 @@
             // 
             // button_searchWords
             // 
-            this.button_searchWords.Location = new System.Drawing.Point(1363, 57);
+            this.button_searchWords.Location = new System.Drawing.Point(1655, 69);
             this.button_searchWords.Name = "button_searchWords";
             this.button_searchWords.Size = new System.Drawing.Size(75, 23);
             this.button_searchWords.TabIndex = 13;
@@ -177,16 +179,36 @@
             // 
             this.listBox_listSearchFiles.FormattingEnabled = true;
             this.listBox_listSearchFiles.ItemHeight = 16;
-            this.listBox_listSearchFiles.Location = new System.Drawing.Point(1150, 98);
+            this.listBox_listSearchFiles.Location = new System.Drawing.Point(1442, 98);
             this.listBox_listSearchFiles.Name = "listBox_listSearchFiles";
             this.listBox_listSearchFiles.Size = new System.Drawing.Size(288, 260);
             this.listBox_listSearchFiles.TabIndex = 14;
+            // 
+            // listBox_allSortedFiles
+            // 
+            this.listBox_allSortedFiles.FormattingEnabled = true;
+            this.listBox_allSortedFiles.ItemHeight = 16;
+            this.listBox_allSortedFiles.Location = new System.Drawing.Point(1082, 118);
+            this.listBox_allSortedFiles.Name = "listBox_allSortedFiles";
+            this.listBox_allSortedFiles.Size = new System.Drawing.Size(256, 244);
+            this.listBox_allSortedFiles.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1082, 95);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(240, 17);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "List of all sorted files in all directories";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1522, 797);
+            this.ClientSize = new System.Drawing.Size(1767, 797);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.listBox_allSortedFiles);
             this.Controls.Add(this.listBox_listSearchFiles);
             this.Controls.Add(this.button_searchWords);
             this.Controls.Add(this.textBox_searchWords);
@@ -227,6 +249,8 @@
         private System.Windows.Forms.TextBox textBox_searchWords;
         private System.Windows.Forms.Button button_searchWords;
         private System.Windows.Forms.ListBox listBox_listSearchFiles;
+        private System.Windows.Forms.ListBox listBox_allSortedFiles;
+        private System.Windows.Forms.Label label6;
     }
 }
 
