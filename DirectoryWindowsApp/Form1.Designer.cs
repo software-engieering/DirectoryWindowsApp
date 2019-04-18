@@ -81,6 +81,7 @@
             this.listBox_listSortedFiles.Name = "listBox_listSortedFiles";
             this.listBox_listSortedFiles.Size = new System.Drawing.Size(275, 244);
             this.listBox_listSortedFiles.TabIndex = 3;
+            this.listBox_listSortedFiles.SelectedIndexChanged += new System.EventHandler(this.listBox_listSortedFiles_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -127,6 +128,7 @@
             this.listBox_listCalcFiles.Name = "listBox_listCalcFiles";
             this.listBox_listCalcFiles.Size = new System.Drawing.Size(287, 212);
             this.listBox_listCalcFiles.TabIndex = 8;
+            this.listBox_listCalcFiles.SelectedIndexChanged += new System.EventHandler(this.listBox_listCalcFiles_SelectedIndexChanged);
             // 
             // listBox_listAnswers
             // 
