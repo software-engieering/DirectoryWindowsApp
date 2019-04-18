@@ -40,8 +40,8 @@ namespace DirectoryWindowsApp
                 {
                     continue;
                 }
-
-
+               
+        
                 // Current token is a number, push it to stack for numbers 
                 if (tokens[i] >= '0' && tokens[i] <= '9')
                 {
@@ -51,7 +51,7 @@ namespace DirectoryWindowsApp
                     {
                         sbuf.Append(tokens[i++]);
                     }
-
+                    
                     values.Push(double.Parse(sbuf.ToString(), CultureInfo.InvariantCulture.NumberFormat));
                 }
 
@@ -108,7 +108,7 @@ namespace DirectoryWindowsApp
             {
                 case '+':
                     return a + b;
-                case '-':
+                case '-':         
                     return a - b;
                 case '*':
                     ;
@@ -139,7 +139,7 @@ namespace DirectoryWindowsApp
             {
                 return false;
             }
-            if ((op1 == '*' || op1 == '/' || op1 == '%') && (op2 == '+' || op2 == '-'))
+            if ((op1 == '*' || op1 == '/' || op1=='%') && (op2 == '+' || op2 == '-'))
             {
                 return false;
             }
